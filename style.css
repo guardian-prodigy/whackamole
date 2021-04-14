@@ -8,10 +8,51 @@ body {
     justify-content: center;
     align-content: center;
     text-align: center;
-} .main {
-    color: green;
 }
-.square {
+    .main {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        background: linear-gradient(45deg, grey, darkgrey);
+        margin: 20px auto 20px auto;
+        border-radius: 10px 0;
+        width: fit-content;
+        
+    
+        
+    } 
+    .main::before, .main::after {
+        content: '';
+        background: linear-gradient(45deg, green, yellow, blue, red, orange, yellow, purple, green);
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        background-size: 500%;
+        z-index: -1;
+        animation: animate 20s linear infinite;
+        
+        } .main::after {
+            filter: blur(20px);
+            border: transparent;
+}  
+@keyframes animate 
+{ 
+    0%
+    {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+} .square {
     height: 120px; width: 120px;
     border: dotted 5px;
     border-image: linear-gradient(45deg, red, green, purple);
@@ -26,5 +67,6 @@ body {
     height: auto; width: auto;
 } .mole {
     background-image: url("kissing.jpg");
+    width: 120px; height: 120px;
     background-size: cover;
 }
