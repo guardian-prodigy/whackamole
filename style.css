@@ -25,6 +25,6 @@ body {
     position: relative;
     height: auto; width: auto;
 } .mole {
-    background-image: url("/kissing.jpg");
+    background-image: url("kissing.jpg");
     background-size: cover;
 }
